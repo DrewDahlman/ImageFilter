@@ -55,6 +55,7 @@ var app = {
     onCameraSuccess: function (imageURI) {
 		plugins.ImageFilter.clean();
 		largeImage = imageURI;
+        filters.pinhole();
 		$(".photo").html("<img src='" + imageURI + "'>");
 		$(".photo").show();
 		
