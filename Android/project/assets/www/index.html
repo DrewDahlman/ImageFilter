@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta charset="utf-8">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- CORE -->
+    <script src='js/core/phonegap-1.4.1.js'></script>
+    <script src='js/core/jQuery.js'></script>
+    
+    <!-- PLUGINS -->
+    <script src='js/plugins/ImageFilter.js'></script>
+        
+    <!-- OUR SCRIPTS -->
+    <script src='js/init.js'></script>
+        
+        
+  </head>
+  <body onload="app.bodyLoad()">
+  	<div id="header"><img src="images/header.png" width="100%"></div>
+  	<div id="wrapper">
+        <div id="content">
+        
+        	<!-- BUTTONS -->
+            <div id="buttons">
+            	<div class="btn" id="camera" onClick="app.useCamera();">use camera</div>
+                <div class="btn" id="roll" onClick="app.useRoll();">use library</div>
+            </div>
+            <!-- END BUTTONS -->
+            
+            <!-- IMAGE AREA -->
+            <div id="imageArea">
+            	<!-- OUR IMAGE -->
+                <div class="photo"></div>
+                <!-- FILTERS -->
+                <div id="filters">
+                	<div class="filter" id="none" onClick="filters.none(largeImage);">
+                    	<div class="filterIcon"><img src="images/filters/none.png" height="100%"></div>
+                        <div class="filterTitle">none</div>
+                    </div>
+                    <div class="filter" id="sunnySide" onClick="filters.sunnySide(largeImage);">
+                    	<div class="filterIcon"><img src="images/filters/sunnySide.png" height="100%"></div>
+                        <div class="filterTitle">sunnySide</div>
+                    </div>
+                    <div class="filter" id="worn" onClick="filters.worn(largeImage);">
+                    	<div class="filterIcon"><img src="images/filters/worn.png" height="100%"></div>
+                        <div class="filterTitle">worn</div>
+                    </div>
+                    <div class="filter" id="vintage" onClick="filters.vintage(largeImage);">
+                    	<div class="filterIcon"><img src="images/filters/vintage.png" height="100%"></div>
+                        <div class="filterTitle">vintage</div>
+                    </div>
+                    <div class="filter" id="stark" onClick="filters.stark(largeImage);">
+                    	<div class="filterIcon"><img src="images/filters/stark.png" height="100%"></div>
+                        <div class="filterTitle">stark</div>
+                    </div>
+                </div>
+            </div>
+            <!-- END IMAGE AREA -->
+            
+            
+        </div>
+    </div>
+  </body>
+</html>
