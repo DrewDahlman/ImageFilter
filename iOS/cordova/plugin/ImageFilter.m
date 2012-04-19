@@ -6,13 +6,7 @@
 //  version 1.0
 
 /*
- Copyright (c) 2012 Drew Dahlman
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2012 Drew Dahlman MIT LICENSE
 */
 
 #import <QuartzCore/QuartzCore.h>
@@ -104,7 +98,7 @@
     // CALLBACK TO JAVASCRIPT WITH IMAGE URI
     self.callbackID = [arguments pop];
     
-    PluginResult* pluginResult = [PluginResult resultWithStatus:PGCommandStatus_OK 
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK 
                                                 messageAsString:filePathB];
     
     /* Create JS to call the success function with the result */
@@ -142,11 +136,16 @@
     CGImageRef cgimg = 
     [context createCGImage:outputImageB fromRect:[outputImageB extent]];
     UIImage *newImg = [UIImage imageWithCGImage:cgimg];
-    
-    NSData *imageData = UIImageJPEGRepresentation(newImg,1.0);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);  
-    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
-    NSString *filePathB = [documentsPath stringByAppendingPathComponent:@"stark.jpg"]; //Add the file name
+	
+	NSData *imageData = UIImageJPEGRepresentation(newImg,1.0);
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
+	
+    int r = arc4random() % 5000;
+	NSString *random = [NSString stringWithFormat:@"%d", r];
+	NSString *tPathA = [documentsPath stringByAppendingPathComponent:@"stark"];
+	NSString *tPathB = [tPathA stringByAppendingString:random];
+	NSString *filePathB = [tPathB stringByAppendingString:@".jpg"];
     
     [imageData writeToFile:filePathB atomically:YES];
     
@@ -160,7 +159,7 @@
     // CALLBACK TO JAVASCRIPT WITH IMAGE URI
     self.callbackID = [arguments pop];
     
-    PluginResult* pluginResult = [PluginResult resultWithStatus:PGCommandStatus_OK 
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK 
                                                 messageAsString:filePathB];
     
     /* Create JS to call the success function with the result */
@@ -208,11 +207,15 @@
     [context createCGImage:outputImageD fromRect:[outputImageD extent]];
     UIImage *newImg = [UIImage imageWithCGImage:cgimg];
     
-    
     NSData *imageData = UIImageJPEGRepresentation(newImg,1.0);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);  
-    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
-    NSString *filePathB = [documentsPath stringByAppendingPathComponent:@"sunnyside.jpg"]; //Add the file name
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
+	
+    int r = arc4random() % 5000;
+	NSString *random = [NSString stringWithFormat:@"%d", r];
+	NSString *tPathA = [documentsPath stringByAppendingPathComponent:@"sunnyside"];
+	NSString *tPathB = [tPathA stringByAppendingString:random];
+	NSString *filePathB = [tPathB stringByAppendingString:@".jpg"];
     
     [imageData writeToFile:filePathB atomically:YES];
     
@@ -227,7 +230,7 @@
     // CALLBACK TO JAVASCRIPT WITH IMAGE URI
     self.callbackID = [arguments pop];
     
-    PluginResult* pluginResult = [PluginResult resultWithStatus:PGCommandStatus_OK 
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK 
                                                 messageAsString:filePathB];
     
     /* Create JS to call the success function with the result */
@@ -283,10 +286,15 @@
     [context createCGImage:outputImageD fromRect:[outputImageD extent]];
     UIImage *newImg = [UIImage imageWithCGImage:cgimg];
     
-    NSData *imageData = UIImageJPEGRepresentation(newImg,1.0);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);  
-    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
-    NSString *filePathB = [documentsPath stringByAppendingPathComponent:@"worn.jpg"]; //Add the file name
+	NSData *imageData = UIImageJPEGRepresentation(newImg,1.0);
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
+	
+    int r = arc4random() % 5000;
+	NSString *random = [NSString stringWithFormat:@"%d", r];
+	NSString *tPathA = [documentsPath stringByAppendingPathComponent:@"worn"];
+	NSString *tPathB = [tPathA stringByAppendingString:random];
+	NSString *filePathB = [tPathB stringByAppendingString:@".jpg"];
     
     [imageData writeToFile:filePathB atomically:YES];
     
@@ -300,7 +308,7 @@
     // CALLBACK TO JAVASCRIPT WITH IMAGE URI
     self.callbackID = [arguments pop];
     
-    PluginResult* pluginResult = [PluginResult resultWithStatus:PGCommandStatus_OK 
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK 
                                                 messageAsString:filePathB];
     
     /* Create JS to call the success function with the result */
@@ -350,9 +358,14 @@
     UIImage *newImg = [UIImage imageWithCGImage:cgimg];
     
     NSData *imageData = UIImageJPEGRepresentation(newImg,1.0);
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);  
-    NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
-    NSString *filePathB = [documentsPath stringByAppendingPathComponent:@"vintage.jpg"]; //Add the file name
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsPath = [paths objectAtIndex:0]; //Get the docs directory 
+	
+    int r = arc4random() % 5000;
+	NSString *random = [NSString stringWithFormat:@"%d", r];
+	NSString *tPathA = [documentsPath stringByAppendingPathComponent:@"vintage"];
+	NSString *tPathB = [tPathA stringByAppendingString:random];
+	NSString *filePathB = [tPathB stringByAppendingString:@".jpg"];
     
     [imageData writeToFile:filePathB atomically:YES];
     
@@ -367,7 +380,7 @@
     // CALLBACK TO JAVASCRIPT WITH IMAGE URI
     self.callbackID = [arguments pop];
     
-    PluginResult* pluginResult = [PluginResult resultWithStatus:PGCommandStatus_OK 
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK 
                                                 messageAsString:filePathB];
     
     /* Create JS to call the success function with the result */
