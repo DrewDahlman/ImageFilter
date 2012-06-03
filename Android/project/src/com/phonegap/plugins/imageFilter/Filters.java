@@ -89,7 +89,7 @@ public class Filters{
 		
 		// SET FILE PATH
 		String filePath = "";
-		File path = new File(Environment.getExternalStorageDirectory()+"/NewBelgium/");
+		File path = new File(Environment.getExternalStorageDirectory()+"/ImageFilter/");
        	File NBBfile = new File(path, "tmp.jpg");
         
         // CREATE FOLDERS IF NEEDED
@@ -133,12 +133,12 @@ public class Filters{
 			Canvas canvas = new Canvas(none);
 			canvas.drawBitmap(none,0,0,null);
 			
-			/*// BORDER
+			// BORDER
 			Context context = MyApplication.getAppContext();
 			Bitmap border = BitmapFactory.decodeResource(context.getResources(),R.drawable.painter);
 			
 			
-			canvas.drawBitmap(border,0,0,null);*/
+			canvas.drawBitmap(border,0,0,null);
 			
 			Paint spaint = new Paint();
 		    ColorMatrix scm = new ColorMatrix();
@@ -193,7 +193,7 @@ public class Filters{
 		
 		// SET FILE PATH
 		String filePath = "";
-		File path = new File(Environment.getExternalStorageDirectory()+"/NewBelgium/");
+		File path = new File(Environment.getExternalStorageDirectory()+"/ImageFilter/");
        	File NBBfile = new File(path, "tmp.jpg");
         
         // CREATE FOLDERS IF NEEDED
@@ -287,7 +287,7 @@ public class Filters{
 		
 		// SET FILE PATH
 		String filePath = "";
-		File path = new File(Environment.getExternalStorageDirectory()+"/NewBelgium/");
+		File path = new File(Environment.getExternalStorageDirectory()+"/ImageFilter/");
        	File NBBfile = new File(path, "tmp.jpg");
         
         // CREATE FOLDERS IF NEEDED
@@ -365,7 +365,7 @@ public class Filters{
 		
 		// SET FILE PATH
 		String filePath = "";
-		File path = new File(Environment.getExternalStorageDirectory()+"/NewBelgium/");
+		File path = new File(Environment.getExternalStorageDirectory()+"/ImageFilter/");
        	File NBBfile = new File(path, "tmp.jpg");
         
         // CREATE FOLDERS IF NEEDED
@@ -453,7 +453,7 @@ public class Filters{
 		
 		// SET FILE PATH
 		String filePath = "";
-		File path = new File(Environment.getExternalStorageDirectory()+"/NewBelgium/");
+		File path = new File(Environment.getExternalStorageDirectory()+"/ImageFilter/");
        	File NBBfile = new File(path, "tmp.jpg");
         
         // CREATE FOLDERS IF NEEDED
